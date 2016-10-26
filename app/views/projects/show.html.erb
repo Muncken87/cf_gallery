@@ -1,0 +1,18 @@
+<div class="project_content">
+  <% if @project.project_image.present? %>
+  <%= image_tag @project.project_image, class: 'post-image' %>
+  <% else %>
+  <% end %>
+  <h3 class="title">
+    <%= @project.project_name %>
+  </h3>
+  <p class="date">
+    Submitted <%= time_ago_in_words(@project.created_at) %> Ago
+  </p>
+
+  <%= link_to root_path(@project) do %>
+    <button class="button">Back</button>
+          <button class="btn btn-default"><%= link_to 'Edit', edit_project_path(@project)%></button>
+  <% end %>
+
+</div>

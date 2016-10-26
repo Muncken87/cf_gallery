@@ -1,0 +1,13 @@
+<div class="project_wrapper">
+<% @project.each do |project| %>
+    <h4 class="title"><%= link_to project.project_name, project %></h4>
+    <p class="date"><%= project.created_at.strftime("%B, %d, %Y") %></p>
+
+    <% if project.project_image.present? %>
+    <div class="index-image" style="background-image:url(<%= image_url (project.project_image) %>)"></div>
+    <% else %>
+  <% end %>
+    <div class="u-cf"></div>
+    <%= truncate project.project_description, length: 350 %>
+<% end %>
+</div>

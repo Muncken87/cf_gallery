@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <div class="container">
+    <figure class="logo">
+      <%= image_tag ('logo.png') %>
+    </figure>
+    <ul>
+      <li>
+         <%= link_to "Projects",  projects_path %>
+      </li>
+      <li>
+       <%= link_to 'New Project', new_project_path, :class => "new_project" %>
+      </li>
+      <li>
+      <%= link_to 'New Student', new_user_path, :class => "new_user" %>
+      </li>
+      <li>
+        <a href="#">Job List</a>
+      </li>
+      <li>
+       <% if user_signed_in? %>
+       <a><%= link_to current_user.first_name, user_path(current_user) %></a>
+       <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>

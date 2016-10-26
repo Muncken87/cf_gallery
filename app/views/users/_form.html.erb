@@ -1,0 +1,82 @@
+<%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="col-md-6">
+    <div class="field">
+      <p><%= f.label :avatar_url %></p>
+      <p><%= f.text_area :avatar_url, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :first_name %></p>
+      <p><%= f.text_field :first_name,class:  'form-control' %></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :last_name %></p>
+      <p><%= f.text_area :last_name,class:  'form-control' %></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :course %></p>
+      <p><%= f.select(:course, options_for_select([['Web Development','Web Development'],['UX Design','UX Design'],['UI Design','UI Design'],['IOS Development','IOS Development']]) ,{}, :class => 'form-control')  %></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :age %></p>
+      <p><%= f.number_field(:age, in: 1.0..100.0,class:  'form-control') %></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :bio %></p>
+      <p><%= f.text_area :bio, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :skills %></p>
+      <p><%= f.text_area :skills, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :location %></p>
+      <p><%= f.text_area :location, class: 'form-control'%></p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="field">
+      <p><%= f.label :email %></p>
+      <p><%= f.text_area :email, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :linkedin_url %></p>
+      <p><%= f.text_area :linkedin_url, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :behance_url %></p>
+      <p><%= f.text_area :behance_url, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :github_url %></p>
+      <p><%= f.text_area :github_url, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :playstore_url %></p>
+      <p><%= f.text_area :playstore_url, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :twitter_url %></p>
+      <p><%= f.text_area :twitter_url, class: 'form-control'%></p>
+    </div>
+    <div class="field">
+      <p><%= f.label :pinterest_url %></p>
+      <p><%= f.text_area :pinterest_url, class: 'form-control'%></p>
+    </div>
+    <div class="actions">
+      <p><%= f.submit class: "btn btn-default" %></p>
+    </div>
+  </div>
+  <% end %>

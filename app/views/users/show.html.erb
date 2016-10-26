@@ -1,0 +1,63 @@
+<div class="user-index">
+  <div class="container">
+    <div class="row">
+
+     <h1 class="user-title">Hello  <%= @user.first_name %></h1>
+
+      <div class="col-md-4">
+        <section class="user-left">
+          <div class="user-info">
+          <% if @user.avatar_url.present? %>
+            <%= image_tag @user.avatar_url, :class => 'user-img' %>
+          <% else %>
+          <% end %>
+          <h3>First Name</h3>
+          <p><%= @user.first_name %></h2>
+          <h3>Last Name</h3>
+          <p><%= @user.last_name %></p>
+          <h3>Course</h3>
+          <p><%= @user.course %></p>
+          <h3>Age</h3>
+          <p><%= @user.age %></p>
+          <h3>Location</h3>
+          <p><%= @user.location %></p>
+        </div>
+        <div class="user-links">
+          <p class="user-links-round icon-flow-parallel">
+            <a href="<%= @user.email %>"><%= @user.user_email %></a>
+          </p>
+          <p class="user-links-round icon-linkedin">
+            <a href="<%= @user.linkedin_url %>"><%= @user.linkedin_url %></a>
+          </p>
+          <p class="user-links-round icon-behance">
+            <a href="<%= @user.behance_url %>"><%= @user.behance_url %></a>
+          </p>
+          <p class="user-links-round icon-github">
+            <a href="<%= @user.github_url %>"><%= @user.github_url %></a>
+          </p>
+          <p class="user-links-round icon-flow-parallel">
+            <a href="<%= @user.playstore_url %>"><%= @user.playstore_url %></a>
+          </p>
+          <p class="user-links-round icon-twitter">
+            <a href="<%= @user.twitter_url %>"><%= @user.twitter_url %></a>
+          </p>
+          <p class="user-links-round icon-pinterest">
+            <a href="<%= @user.pinterest_url %>"><%= @user.pinterest_url %></a>
+          </p>
+      </div>
+
+      </div>
+
+      <div class="col-md-8">
+        <section class="user-right">
+          <h3>Bio</h3>
+          <p><%= @user.bio %></p>
+          <h3>Skills</h3>
+          <p><%= @user.skills %></p>
+          <%= link_to 'Edit', edit_user_path(@user) %> |
+          <%= link_to 'Back', users_path %>
+        </section>
+      </div>
+   </div>
+  </div>
+</div>
